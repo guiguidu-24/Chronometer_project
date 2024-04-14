@@ -45,24 +45,22 @@ architecture Behavioral of Control_bloc is
     type state is (comptage, comptage_to_pause, pause, RAZ_state, pause_to_comptage);
     signal pr_state, nx_state: state ;
 begin
-    process (CLR, clock, End_signal)
+    process (CLR, clock)
     begin 
         if (CLR = '1') then 
-            pr_state <= RAZ_state;
-        elsif (End_signal = '1') then
-            pr_state <= pause ;
+            pr_state <= pause;
          elsif (clock'event and clock='1') then
             pr_state <= nx_state ;
         end if;
      end process;
      
-     process(BP_start_stop , BP_RAZ )
+     process(BP_start_stop , BP_RAZ, CLR, End_signal)
      begin 
         case pr_state is 
             when pause => 
-                if (BP_start_stop = '1') then 
+                if (BP_start_stop = '1' and End_signal = '0') then 
                     nx_state <= pause_to_comptage ;
-                 elsif (BP_RAZ = '1') then 
+                 elsif (BP_RAZ = '1' ) then 
                     nx_state <= RAZ_state ;
                  else 
                     nx_state <= pause ;
@@ -76,7 +74,9 @@ begin
              when comptage => 
                 if (BP_start_stop = '1') then
                     nx_state <= comptage_to_pause  ;
-                else 
+                elsif (End_signal = '1') then
+                    nx_state <= pause;   
+                else
                     nx_state <= comptage ;
                 end if;
              when comptage_to_pause  => 
@@ -95,7 +95,8 @@ begin
     end process;
     
     
-    Count_enable <= '1' when pr_state = pause_to_comptage else 
-        '1' when pr_state = comptage else '0';
-    RAZ_enable <= '1' when pr_state = RAZ_state else '0';   
+    Count_enable <= '1' when pr_state = pause_to_comptage or pr_state = comptage
+        else '0';
+    RAZ_enable <= '1' when pr_state = RAZ_state
+        else '0';   
 end Behavioral;

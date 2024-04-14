@@ -44,7 +44,7 @@ entity Compteur is
 end Compteur;
 
 architecture Behavioral of Compteur is
-signal ctr_1kHz  : integer  range 0 to 99999;
+signal ctr_1kHz  : integer  range 0 to 999; --999;
 begin
     process(clock, CLR)
     begin 
@@ -55,17 +55,14 @@ begin
             time_centieme <= 0;
             ctr_1kHz <=0;
         elsif rising_edge(clock)then
-            if ctr_1kHz = 99999 then 
+            if ctr_1kHz = 999 then--999 then 
                 ctr_1kHz <= 0;
                 if (RAZ_enable = '1') then
                     time_dizaine <=0;
                     time_unite  <=0;
                     time_dixieme  <=0;
                     time_centieme  <=0;
-                elsif time_dizaine = 5 and time_unite = 9 and time_dixieme = 9 and time_centieme = 9 then 
-                    End_signal  <= '1';
                 elsif (Count_enable = '1') then -- doit on mettre le else count enable = 0 ? 
-                    End_signal <= '0';
                     if time_centieme = 9 then 
                         time_centieme <= 0;
                         if time_dixieme  = 9 then 
@@ -83,7 +80,12 @@ begin
                         time_centieme <= time_centieme + 1;
                     end if;
                 end if;
+            else
+                ctr_1kHz <= ctr_1kHz + 1;
             end if;
         end if;
     end process;
+    
+    End_signal <= '1' when time_dizaine = 5 and time_unite = 9 and time_dixieme = 9 and time_centieme = 9
+        else '0';
 end Behavioral;

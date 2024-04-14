@@ -54,9 +54,6 @@ begin
         if (CLR = '1') then
             anode_selected  <= 0;
             counter_1khz <= 0;
-            selected_chiffre <= 0;
-            anode_signal  <= "1111";
-            afficheur_7_signal <= "0000000";
         elsif (clock'event and clock = '1') then
             if (counter_1khz = 99999) then 
                 counter_1khz <= 0;

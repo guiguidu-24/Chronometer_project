@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Simulation_table_func_impl.wdb" id="1">
+         <top_modules>
+            <top_module name="Simulation_table" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
+      <ZoomEndTime time="153.229685101 ms"></ZoomEndTime>
+      <Cursor1Time time="153.229685100 ms"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="106"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="12" />
+   <wvobject fp_name="/Simulation_table/clock" type="logic">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Simulation_table/CLR" type="logic">
+      <obj_property name="ElementShortName">CLR</obj_property>
+      <obj_property name="ObjectShortName">CLR</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Simulation_table/BP_RAZ" type="logic">
+      <obj_property name="ElementShortName">BP_RAZ</obj_property>
+      <obj_property name="ObjectShortName">BP_RAZ</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Simulation_table/BP_start_stop" type="logic">
+      <obj_property name="ElementShortName">BP_start_stop</obj_property>
+      <obj_property name="ObjectShortName">BP_start_stop</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Simulation_table/anode_signal" type="array">
+      <obj_property name="ElementShortName">anode_signal[3:0]</obj_property>
+      <obj_property name="ObjectShortName">anode_signal[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Simulation_table/point_signal" type="logic">
+      <obj_property name="ElementShortName">point_signal</obj_property>
+      <obj_property name="ObjectShortName">point_signal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Simulation_table/afficheur_7_signal" type="array">
+      <obj_property name="ElementShortName">afficheur_7_signal[6:0]</obj_property>
+      <obj_property name="ObjectShortName">afficheur_7_signal[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Simulation_table/DF/C/time_dizaine" type="array">
+      <obj_property name="ElementShortName">time_dizaine[2:0]</obj_property>
+      <obj_property name="ObjectShortName">time_dizaine[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Simulation_table/DF/C/time_unite" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">time_unite[3:1]</obj_property>
+      <obj_property name="ObjectShortName">time_unite[3:1]</obj_property>
+      <obj_property name="label">time_unite[3:1]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/Simulation_table/DF/C/time_dixieme" type="array">
+      <obj_property name="ElementShortName">time_dixieme[3:1]</obj_property>
+      <obj_property name="ObjectShortName">time_dixieme[3:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Simulation_table/DF/C/time_centieme" type="array">
+      <obj_property name="ElementShortName">time_centieme[3:1]</obj_property>
+      <obj_property name="ObjectShortName">time_centieme[3:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Simulation_table/DF/C/ctr_1kHz" type="array">
+      <obj_property name="ElementShortName">ctr_1kHz[9:0]</obj_property>
+      <obj_property name="ObjectShortName">ctr_1kHz[9:0]</obj_property>
+   </wvobject>
+</wave_config>

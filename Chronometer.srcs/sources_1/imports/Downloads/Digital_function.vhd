@@ -41,6 +41,7 @@ entity Digital_function is
            afficheur_7_signal : out std_logic_vector ( 6 downto 0));
 end Digital_function;
 
+
 architecture structural of Digital_function is
 signal End_signal, Count_enable, RAZ_enable : STD_LOGIC;
 signal time_dizaine : integer range 0 to 5;
@@ -61,10 +62,10 @@ component Compteur is
            CLR : in STD_LOGIC;
            RAZ_enable : in STD_LOGIC;
            Count_enable : in STD_LOGIC;
-           time_dizaine : out integer range 0 to 5;
-           time_unite : out integer range 0 to 9;
-           time_dixieme : out integer range 0 to 9;
-           time_centieme : out integer range 0 to 9;
+           time_dizaine : inout integer range 0 to 5;
+           time_unite : inout integer range 0 to 9;
+           time_dixieme : inout integer range 0 to 9;
+           time_centieme : inout integer range 0 to 9;
            End_signal : out STD_LOGIC);
 end component;
 

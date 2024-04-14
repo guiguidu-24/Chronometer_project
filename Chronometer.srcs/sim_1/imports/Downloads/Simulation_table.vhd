@@ -82,6 +82,12 @@ begin
     BP_start_stop <= '0';
     
     wait for 10 ms; 
+    
+    CLR <= '0'; 
+    BP_RAZ <= '0'; 
+    BP_start_stop <= '0';
+    
+    wait for 10 ms; 
   
     CLR <= '0'; 
     BP_RAZ <= '0'; 
@@ -93,19 +99,7 @@ begin
     BP_RAZ <= '0'; 
     BP_start_stop <= '0'; 
     
-    wait for 40 ms;
-    
-    CLR <= '0'; 
-    BP_RAZ <= '1'; 
-    BP_start_stop <= '0';
-    
-    wait for 10 ms;
-    
-    CLR <= '0'; 
-    BP_RAZ <= '0'; 
-    BP_start_stop <= '0';
-    
-    wait for 10 ms;
+    wait for 60 ms;
     
     CLR <= '0'; 
     BP_RAZ <= '0'; 
@@ -122,6 +116,18 @@ begin
     CLR <= '0'; 
     BP_RAZ <= '1'; 
     BP_start_stop <= '0';
+    
+    wait for 10 ms;
+    
+    CLR <= '0'; 
+    BP_RAZ <= '0'; 
+    BP_start_stop <= '0';
+    
+    wait for 10 ms;
+    
+    CLR <= '0'; 
+    BP_RAZ <= '0'; 
+    BP_start_stop <= '1';
     
     wait for 10 ms;
     
