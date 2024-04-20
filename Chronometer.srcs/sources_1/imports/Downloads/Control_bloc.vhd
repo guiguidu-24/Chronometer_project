@@ -54,7 +54,7 @@ begin
         end if;
      end process;
      
-     process(BP_start_stop , BP_RAZ, CLR, End_signal)
+     process(pr_state, BP_start_stop , BP_RAZ, End_signal)
      begin 
         case pr_state is 
             when pause => 
